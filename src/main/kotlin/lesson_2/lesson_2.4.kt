@@ -1,13 +1,15 @@
 package org.example.lesson_2
 
-fun main () {
+fun main() {
     val crystalOre = 7
     val ironOre = 11
 
-    val a = crystalOre * 20 / 100
-    println(a)
+    val percentage = 20
 
-    val b = ironOre * 20 / 100
-    println(b)
+    val processedCrystalOre = crystalOre * percentage / 100
+    val processedIronOre = ironOre * percentage / 100
+
+    println("$processedCrystalOre")
+    println("$processedIronOre")
 
 }
