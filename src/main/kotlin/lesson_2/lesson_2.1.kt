@@ -1,12 +1,12 @@
 package org.example.lesson_2
 
 fun main() {
-    val a = 3.0
-    val b = 4.0
-    val c = 3.0
-    val d = 5.0
+    val firstNumber = 3.0
+    val secondNumber = 4.0
+    val thirdNumber = 3.0
+    val fourthNumber = 5.0
 
-    val sum = (a + b + c + d) / 4
+    val sum = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4
 
     println(sum)
 
