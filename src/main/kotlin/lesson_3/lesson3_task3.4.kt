@@ -5,7 +5,7 @@ fun main() {
     var finish = "E4"
     var strokeNumber = 1
 
-    var moveString = "$start-$finish;$strokeNumber"
+    var moveString = "[$start-$finish;$strokeNumber]"
 
     println(moveString)
 
@@ -13,7 +13,7 @@ fun main() {
     finish = "D4"
     strokeNumber = 1
 
-    moveString = "$start-$finish;$strokeNumber"
+    moveString = "[$start-$finish;$strokeNumber]"
 
     println(moveString)
 }
