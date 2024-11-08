@@ -3,14 +3,13 @@ package org.example.lesson_4
 fun main() {
     val trainingDay = 5
 
-
-    val armsAndAbs = trainingDay == 1 || trainingDay == 3 || trainingDay == 5 // Руки/пресс
-    val legsAndBack = trainingDay == 2 || trainingDay == 4 // Ноги/спина
+    val armsAndAbs = (trainingDay % 2) == 1
+    val legsAndBack = (trainingDay % 2) == 0
 
     println(
-        "Упражнения для рук:       ${armsAndAbs}\n" +
-                "Упражнения для ног:       ${legsAndBack}\n" +
-                "Упражнения для спины:     ${legsAndBack}\n" +
-                "Упражнения для пресса:    ${armsAndAbs}"
+        "Упражнения для рук:       $armsAndAbs\n" +
+                "Упражнения для ног:       $legsAndBack\n" +
+                "Упражнения для спины:     $legsAndBack\n" +
+                "Упражнения для пресса:    $armsAndAbs"
     )
 }
