@@ -1,5 +1,6 @@
 package org.example.lesson_4
 
+
 fun main() {
     val sunny: Boolean = true
     val tent: Boolean = true
