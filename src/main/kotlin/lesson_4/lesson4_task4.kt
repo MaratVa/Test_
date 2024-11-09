@@ -1,15 +1,14 @@
 package org.example.lesson_4
 
 fun main() {
-    val trainingDay = 5
+    val trainingDay = 5 // День тренировки (измените это значение, чтобы проверить разные дни)
 
-    val armsAndAbs = (trainingDay % 2) == 1
-    val legsAndBack = (trainingDay % 2) == 0
+    val isArmsAndAbs = (trainingDay % 2) == 1 // Руки/пресс
 
     println(
-        "Упражнения для рук:       $armsAndAbs\n" +
-                "Упражнения для ног:       $legsAndBack\n" +
-                "Упражнения для спины:     $legsAndBack\n" +
-                "Упражнения для пресса:    $armsAndAbs"
+        "Упражнения для рук:       $isArmsAndAbs\n" +
+                "Упражнения для ног:       ${!isArmsAndAbs}\n" +
+                "Упражнения для спины:     ${!isArmsAndAbs}\n" +
+                "Упражнения для пресса:    $isArmsAndAbs"
     )
 }
