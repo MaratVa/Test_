@@ -6,7 +6,10 @@ fun main() {
     val air: Int = 20
     val currentSeason: String = "Winter"
 
-    val favorableConditions = sunny && tent && air == TARGET_HUMIDITY && currentSeason != FAVORABLE_SEASON
+    val isSunny = true
+    val isTent = true
+
+    val favorableConditions = isSunny && isTent && air == TARGET_HUMIDITY && currentSeason != FAVORABLE_SEASON
 
     println("Благоприятные ли условия сейчас для роста бобовых?: $favorableConditions")
 }
