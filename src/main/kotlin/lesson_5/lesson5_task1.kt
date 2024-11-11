@@ -1,10 +1,8 @@
 package org.example.lesson_5
 
-import kotlin.random.Random
-
 fun main() {
-    val num1 = Random.nextInt(1, 10)
-    val num2 = Random.nextInt(1, 10)
+    val num1 = (1..10).random()
+    val num2 = (1..10).random()
 
     println("Введите сумму чисел $num1 + $num2:")
     val answer = readLine()!!.toInt()
