@@ -11,7 +11,8 @@ fun main() {
     val targetHumidity = 20
     val favorableSeason = "Winter"
 
-    val favorableConditions = isSunny && isTent && air == targetHumidity && currentSeason != favorableSeason
+    val favorableConditions =
+        isSunny == sunny && isTent == tent && air == targetHumidity && currentSeason != favorableSeason
 
     println("Благоприятные ли условия сейчас для роста бобовых?: $favorableConditions")
 }
