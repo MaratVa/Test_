@@ -8,11 +8,10 @@ fun main() {
 
     val isSunny = true
     val isTent = true
+    val targetHumidity = 20
+    val favorableSeason = "Winter"
 
-    val favorableConditions = isSunny && isTent && air == TARGET_HUMIDITY && currentSeason != FAVORABLE_SEASON
+    val favorableConditions = isSunny && isTent && air == targetHumidity && currentSeason != favorableSeason
 
     println("Благоприятные ли условия сейчас для роста бобовых?: $favorableConditions")
 }
-
-const val TARGET_HUMIDITY = 20
-const val FAVORABLE_SEASON = "Winter"
