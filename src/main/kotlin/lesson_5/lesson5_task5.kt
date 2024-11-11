@@ -9,7 +9,7 @@ fun main() {
     println("Введите три числа от 0 до 42:")
     for (i in 1..3) {
         print("Число $i: ")
-        val number = readLine()?.toIntOrNull()
+        val number = readln().toIntOrNull()
         if (number != null && number in 0..42) {
             userNumbers.add(number)
         } else {
@@ -17,7 +17,7 @@ fun main() {
         }
     }
 
-    val matches = userNumbers.intersect(winningNumbers).size
+    val matches = userNumbers.intersect(winningNumbers.toSet()).size
 
     println("Выигрышные числа: $winningNumbers")
 
