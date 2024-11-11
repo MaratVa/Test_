@@ -3,7 +3,7 @@ package org.example.lesson_5
 fun main() {
     val currentYear = 2024
     println("Введите ваш год рождения:")
-    val userYear = readLine()!!.toInt()
+    val userYear = readln().toIntOrNull() ?: return
 
     val userAge = currentYear - userYear
 
