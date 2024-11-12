@@ -1,19 +1,20 @@
 package org.example.lesson_5
 
-import kotlin.random.Random
-
 fun main() {
-    val winningNumbers = List(3) { Random.nextInt(0, 43) }
+    val winningNumbers = List(3) { (0..42).random() }
     val userNumbers = mutableListOf<Int>()
 
     println("Введите три числа от 0 до 42:")
     for (i in 1..3) {
-        print("Число $i: ")
-        val number = readln().toIntOrNull()
-        if (number != null && number in 0..42) {
-            userNumbers.add(number)
-        } else {
-            println("Пожалуйста, введите корректное число от 0 до 42.")
+        var number: Int? = null
+        while (number == null) { // Цикл, пока не будет введено корректное число
+            print("Число $i: ")
+            number = readln().toIntOrNull()
+            if (number != null && number in 0..42) {
+                userNumbers.add(number)
+            } else {
+                println("Пожалуйста, введите корректное число от 0 до 42.")
+            }
         }
     }
 
