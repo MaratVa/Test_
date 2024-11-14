@@ -1,10 +1,11 @@
 package org.example.lesson_6
 
 fun main() {
-    var seconds = 10
+    print("Введите количество секунд...")
+    val seconds = readLine()?.toIntOrNull() ?: return
 
-    while (seconds > 0) {
-        println("Прошло ${seconds--} секунд ")
-        Thread.sleep(1000)
-    }
+    println("Запускаю таймер на $seconds секунд")
+    Thread.sleep(seconds * 1000L)
+    println("Прошло $seconds секунд")
+
 }
