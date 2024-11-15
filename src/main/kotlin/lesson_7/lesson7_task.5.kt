@@ -3,17 +3,21 @@ package org.example.lesson_7
 fun generatePassword(length: Int): String {
     if (length < 6) throw IllegalArgumentException("Длина пароля должна быть не менее 6 символов")
 
-    val chars = ('a'..'z').toList() + ('A'..'Z').toList() + ('0'..'9').toList()
+    val lowercaseLetters = ('a'..'z').toList()
+    val uppercaseLetters = ('A'..'Z').toList()
+    val digits = ('0'..'9').toList()
+    val allChars = lowercaseLetters + uppercaseLetters + digits
     val password = mutableListOf<Char>()
 
-    while (password.count { it.isDigit() } == 0 || password.count { it.isLowerCase() } == 0 || password.count { it.isUpperCase() } == 0) {
-        password.clear()
-        for (i in 0 until length) {
-            password.add(chars.random())
-        }
+    password.add(lowercaseLetters.random())
+    password.add(uppercaseLetters.random())
+    password.add(digits.random())
+
+    for (i in 3 until length) {
+        password.add(allChars.random())
     }
 
-
+    password.shuffle()
     return password.joinToString("")
 }
 
