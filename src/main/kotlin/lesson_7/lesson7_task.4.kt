@@ -16,10 +16,6 @@ fun main() {
     for (i in seconds downTo 1) {
         println("Осталось секунд: $i")
         Thread.sleep(1000)
-        if (System.currentTimeMillis() - startTime >= seconds * 1000) {
-            println("Время вышло")
-            return
-        }
 
     }
 
