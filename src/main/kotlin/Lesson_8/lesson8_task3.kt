@@ -1,11 +1,11 @@
 package org.example.Lesson_8
 
 fun main() {
-    val ingredients = arrayOf("Мука", "Яйца", "Сахар", "Масло", "Молоко")
+    val ingredients = listOf("Мука", "Яйца", "Сахар", "Масло", "Молоко")
     print("Введите название ингредиента: ")
-    val ingredientToFind = readLine()!!.toString()
+    val ingredientToFind = readln().lowercase()
 
-    if (ingredients.contains(ingredientToFind)) {
+    if (ingredientToFind in ingredients.map { it.lowercase() }) {
         println("Ингредиент $ingredientToFind в рецепте есть")
     } else {
         println("Такого ингредиента в рецепте нет")
