@@ -6,11 +6,9 @@ fun main() {
     print("Введите название ингредиента: ")
     val ingredientToFind = readln().lowercase()
 
-
-    if (ingredients.any { it.lowercase() == ingredientToFind }) {
+    if (ingredientToFind in ingredients.map { it.lowercase() }) {
         println("Ингредиент $ingredientToFind в рецепте есть")
-        return
+    } else {
+        println("Такого ингредиента в рецепте нет")
     }
-
-    println("Такого ингредиента в рецепте нет")
 }
