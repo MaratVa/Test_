@@ -1,11 +1,11 @@
 package org.example.lesson_11
 
-data class User2(
-    val userId: Int,
-    val login: String,
-    var password: String,
-    val email: String,
-    var bio: String? = null
+class User2(
+    private val userId: Int,
+    private val login: String,
+    private var password: String,
+    private val email: String,
+    private var bio: String? = null
 ) {
     fun printUserInfo() {
         println("ID пользователя: $userId")
