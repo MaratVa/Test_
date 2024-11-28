@@ -1,17 +1,16 @@
 package org.example.lesson_11
 
-data class VoiceChatUser(
+class VoiceChatUser(
     val id: Int,
     val nickname: String,
     val avatarUrl: String
 )
 
-data class Room(
-    val id: Int,
-    val coverUrl: String,
-    val name: String,
-    val participants: MutableList<VoiceChatUser> = mutableListOf(),
-    val participantStatuses: MutableMap<Int, String> = mutableMapOf()
+class Room(
+    private val coverUrl: String,
+    private val name: String,
+    private val participants: MutableList<VoiceChatUser> = mutableListOf(),
+    private val participantStatuses: MutableMap<Int, String> = mutableMapOf()
 ) {
     fun addParticipant(user: VoiceChatUser) {
         participants.add(user)
@@ -39,7 +38,6 @@ fun main() {
     val user3 = VoiceChatUser(3, "anotherOne", "avatar3.jpeg")
 
     val room = Room(
-        1,
         "cover.jpg",
         "Комната для обсуждения Kotlin",
     )
