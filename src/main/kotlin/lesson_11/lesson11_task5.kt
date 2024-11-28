@@ -1,11 +1,12 @@
 package org.example.lesson_11
 
-data class ForumMember(
+class ForumMember(
     val userId: Int,
     val userName: String
 )
 
-data class ForumMessage(
+class ForumMessage(
+    val messageId: Int,
     val authorId: Int,
     val message: String
 )
@@ -14,6 +15,7 @@ class Forum {
     private val members: MutableList<ForumMember> = mutableListOf()
     private val messages: MutableList<ForumMessage> = mutableListOf()
     private var nextUserId = 1
+    private var nextMessageId = 1
 
     fun createNewUser(userName: String): ForumMember {
         val newMember = ForumMember(nextUserId++, userName)
@@ -23,7 +25,7 @@ class Forum {
 
     fun createNewMessage(authorId: Int, message: String): ForumMessage? {
         if (members.any { it.userId == authorId }) {
-            val newMessage = ForumMessage(authorId, message)
+            val newMessage = ForumMessage(nextMessageId++,authorId, message)
             messages.add(newMessage)
             return newMessage
         }
@@ -33,7 +35,7 @@ class Forum {
     fun printThread() {
         messages.forEach { message ->
             val author = members.find { it.userId == message.authorId }?.userName ?: "Unknown User"
-            println("$author: ${message.message}")
+            println("${message.messageId}.$author: ${message.message}")
         }
     }
 }
