@@ -2,9 +2,14 @@ package org.example.lesson_11
 
 class RecipeCategory(
     val categoryId: Int,
-    val name: String
+    val name: String,
+    private val recipes: MutableList<Recipe> = mutableListOf()
 ) {
     override fun toString(): String = "RecipeCategory(categoryId=$categoryId, name='$name')"
+
+    fun addRecipe(recipe: Recipe) {
+        recipes.add(recipe)
+    }
 }
 
 class Ingredient(
@@ -39,6 +44,8 @@ fun main() {
         Ingredient(7, "Burger buns", "2", "pieces")
     )
     val mushroomCheeseBurger = Recipe(1, "Burger with Mushrooms and Cheese", burgerCategory.categoryId, ingredients)
+
+    burgerCategory.addRecipe(mushroomCheeseBurger)
 
     println("Category: ${burgerCategory.name}")
     println("Recipe: ${mushroomCheeseBurger.title}")
