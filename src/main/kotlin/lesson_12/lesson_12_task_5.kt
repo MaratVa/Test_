@@ -8,8 +8,8 @@ class DailyWeather(
     private val nightTemperatureKelvin: Int,
     val precipitation: Boolean
 ) {
-    val dailyTemperatureCelsius: Int get() = dailyTemperatureKelvin - 273
-    val nightTemperatureCelsius: Int get() = nightTemperatureKelvin - 273
+    val dailyTemperatureCelsius: Int get() = dailyTemperatureKelvin - TemperatureConstants.KELVIN_OFFSET
+    val nightTemperatureCelsius: Int get() = nightTemperatureKelvin - TemperatureConstants.KELVIN_OFFSET
 
     init {
         displayWeather()
@@ -30,8 +30,8 @@ fun main() {
     val weatherData = mutableListOf<DailyWeather>()
 
     for (i in 1..30) {
-        val dailyTemp = random.nextInt(273 + 10, 273 + 35)
-        val nightTemp = random.nextInt(273, 273 + 30)
+        val dailyTemp = random.nextInt(TemperatureConstants.KELVIN_OFFSET + 10, TemperatureConstants.KELVIN_OFFSET + 35)
+        val nightTemp = random.nextInt(TemperatureConstants.KELVIN_OFFSET, TemperatureConstants.KELVIN_OFFSET + 30)
         val hasPrecipitation = random.nextBoolean()
         weatherData.add(DailyWeather(dailyTemp, nightTemp, hasPrecipitation))
     }
@@ -46,4 +46,8 @@ fun main() {
     println("Средняя дневная температура: $averageDailyTemp°C")
     println("Средняя ночная температура: $averageNightTemp°C")
     println("Количество дней с осадками: $precipitationDays")
+}
+
+object TemperatureConstants {
+    const val KELVIN_OFFSET = 273
 }
