@@ -4,13 +4,15 @@ class Contact(
     val name: String,
     val phoneNumber: Long?,
     val company: String?
-) {
-    companion object {
-        fun printContacts(contacts: List<Contact>) {
-            contacts.forEach { contact ->
-                println("Имя: ${contact.name}, Телефон: ${contact.phoneNumber}, Компания: ${contact.company}")
-            }
-        }
+)
+
+fun printContacts(contacts: List<Contact>) {
+    if (contacts.isEmpty()) {
+        println("Список контактов пуст")
+        return
+    }
+    contacts.forEach { contact ->
+        println("Имя: ${contact.name}, Телефон: ${contact.phoneNumber}, Компания: ${contact.company}")
     }
 }
 
@@ -36,5 +38,5 @@ fun main() {
     }
 
     println("\nСозданные контакты:")
-    Contact.printContacts(contacts)
+    printContacts(contacts)
 }
