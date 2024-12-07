@@ -1,19 +1,21 @@
 package org.example.Lesson_13
 
 class Contact(
-    val name: String,
-    val phoneNumber: Long?,
-    val company: String?
-)
+    private val name: String,
+    private val phoneNumber: Long?,
+    private val company: String?
+) {
+    override fun toString(): String {
+        return "Имя: $name, Телефон: ${phoneNumber ?: "<не указано>"}, Компания: ${company ?: "<не указано>"}"
+    }
+}
 
 fun printContacts(contacts: List<Contact>) {
     if (contacts.isEmpty()) {
         println("Список контактов пуст")
         return
     }
-    contacts.forEach { contact ->
-        println("Имя: ${contact.name}, Телефон: ${contact.phoneNumber}, Компания: ${contact.company}")
-    }
+    contacts.forEach { println(it) }
 }
 
 fun main() {
