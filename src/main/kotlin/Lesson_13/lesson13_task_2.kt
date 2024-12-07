@@ -2,10 +2,13 @@ package org.example.Lesson_13
 
 class Contact2(
     private val name: String,
-    private val phoneNumber: String, private var company: String?
+    private val phoneNumber: String,
+    private val company: String? = null
 ) {
     fun printContactInfo() {
-        println("- Имя: $name\n- Номер: $phoneNumber\n- Компания: ${company ?: "<не указано>"}")
+        println("- Имя: $name")
+        println("- Номер: $phoneNumber")
+        println("- Компания: ${company ?: "<не указано>"}")
     }
 }
 
