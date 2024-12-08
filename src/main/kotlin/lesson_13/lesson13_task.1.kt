@@ -1,10 +1,10 @@
-package org.example.Lesson_13
+package org.example.lesson_13
 
 class Contact(
     val name: String,
-    val phoneNumber: Long,
-    val company: String?
-)
+    val phoneNumber: Long, val company: String?
+) {
+}
 
 fun main() {
     val contact1 = Contact("Иван Иванов", 1234567890, "OpenAI")
