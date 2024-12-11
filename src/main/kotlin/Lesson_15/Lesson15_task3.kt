@@ -8,22 +8,11 @@ abstract class ForumUser(val username: String) {
     open fun postMessage(message: String) {
         println("$username пишет сообщение: $message")
     }
-
-    abstract fun canDeleteMessages(): Boolean
-    abstract fun canDeleteUsers(): Boolean
-
 }
 
-class RegularUser(username: String) : ForumUser(username) {
-    override fun canDeleteMessages(): Boolean = false
-    override fun canDeleteUsers(): Boolean = false
-
-}
+class RegularUser(username: String) : ForumUser(username) {}
 
 class Administrator(username: String) : ForumUser(username) {
-    override fun canDeleteMessages(): Boolean = true
-    override fun canDeleteUsers(): Boolean = true
-
     fun deleteMessage(message: String) {
         println("$username удаляет сообщение: $message")
     }
@@ -44,5 +33,4 @@ fun main() {
     admin.postMessage("Добро пожаловать!")
     admin.deleteMessage("Нежелательное сообщение")
     admin.deleteUser(regularUser)
-
 }
