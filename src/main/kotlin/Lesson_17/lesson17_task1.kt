@@ -4,7 +4,6 @@ class QuizItem(
     private val question: String,
     private var answer: String
 ) {
-
     val questionText: String
         get() = question
 
