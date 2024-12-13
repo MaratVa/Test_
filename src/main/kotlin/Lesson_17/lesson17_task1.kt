@@ -9,9 +9,9 @@ class QuizItem(
         get() = question
 
     var answerText: String
-        get() = answer
+        get() = this.answer
         set(value) {
-            answer = value
+            this.answer = value
         }
 }
 
