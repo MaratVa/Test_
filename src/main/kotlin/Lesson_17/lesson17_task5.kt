@@ -13,7 +13,7 @@ class User(
         }
 
     var passwordProperty: String
-        get() = String(CharArray(password.length) { '*' })
+        get() = "*".repeat(password.length)
         set(value) {
             println("Вы не можете изменить пароль")
         }
