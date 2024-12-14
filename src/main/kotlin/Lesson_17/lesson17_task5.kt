@@ -5,10 +5,10 @@ class User(
     private var password: String
 ) {
 
-    var loginProperty: String
+    var loginProperty: String = ""
         get() = login
         set(value) {
-            login = value
+            field = value
             println("Логин успешно изменен на: $value")
         }
 
