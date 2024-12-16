@@ -1,7 +1,5 @@
 package org.example.Lesson_19
 
-import kotlin.NotImplementedError
-
 class SpaceShip {
     fun takeOff() {
         println("Корабль взлетает...")
