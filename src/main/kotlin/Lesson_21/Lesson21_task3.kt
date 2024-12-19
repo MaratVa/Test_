@@ -12,7 +12,7 @@ fun Player.isHealthy(): Boolean {
 
 fun main() {
     val player1 = Player("Герой", 100, 100)
-    println("${player1.name} здоров: ${player1.isHealthy()}") // true
+    println("${player1.name} здоров: ${player1.isHealthy()}")
 
     val player2 = Player("Вор", 50, 100)
     println("${player2.name} здоров: ${player2.isHealthy()}")
