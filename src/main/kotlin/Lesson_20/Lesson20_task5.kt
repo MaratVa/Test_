@@ -8,8 +8,7 @@ class Robot {
         "Я люблю программировать.",
         "До скорой встречи!"
     )
-    private var modifier: ((String) -> String)? = null
-
+    private var modifier: (String) -> String = { it }
 
     fun setModifier(mod: (String) -> String) {
         modifier = mod
@@ -17,7 +16,7 @@ class Robot {
 
     fun say() {
         val phrase = phrases.random()
-        val modifiedPhrase = modifier?.invoke(phrase) ?: phrase
+        val modifiedPhrase = modifier(phrase)
         println(modifiedPhrase)
     }
 }
