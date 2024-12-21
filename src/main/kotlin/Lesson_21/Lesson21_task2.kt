@@ -1,13 +1,7 @@
 package org.example.Lesson_21
 
 fun List<Int>.evenNumbersSum(): Int {
-    var sum = 0
-    for (number in this) {
-        if (number % 2 == 0) {
-            sum += number
-        }
-    }
-    return sum
+    return this.filter { it % 2 == 0 }.sum()
 }
 
 fun main() {
