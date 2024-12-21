@@ -1,33 +1,19 @@
 package org.example.Lesson_21
 
 fun Map<String, Int>.maxCategory(): String? {
-    if (this.isEmpty()) {
-        return null
-    }
-    var maxCategory: String? = null
-    var maxExperience = Int.MIN_VALUE
-
-    for ((category, experience) in this) {
-        if (experience > maxExperience) {
-            maxExperience = experience
-            maxCategory = category
-        }
-    }
-
-    return maxCategory
+    return this.maxByOrNull { it.value }?.key
 }
 
 fun main() {
     val skills1 = mapOf("Strength" to 50, "Agility" to 70, "Intelligence" to 30)
-    println("Максимальный навык в $skills1: ${skills1.maxCategory()}")
+    println("Максимальный навык в $skills1: ${skills1.maxCategory()}") // Agility
 
     val skills2 = mapOf("Strength" to 100, "Agility" to 70, "Intelligence" to 100)
-    println("Максимальный навык в $skills2: ${skills2.maxCategory()}")
+    println("Максимальный навык в $skills2: ${skills2.maxCategory()}") // Strength
 
     val skills3 = mapOf("Strength" to 20, "Agility" to 20, "Intelligence" to 20)
-    println("Максимальный навык в $skills3: ${skills3.maxCategory()}")
+    println("Максимальный навык в $skills3: ${skills3.maxCategory()}") // Strength
 
     val skills4 = mapOf<String, Int>()
-    println("Максимальный навык в $skills4: ${skills4.maxCategory()}")
-
+    println("Максимальный навык в $skills4: ${skills4.maxCategory()}") // null
 }
